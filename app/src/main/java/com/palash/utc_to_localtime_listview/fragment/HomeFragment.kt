@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Handler(Looper.getMainLooper()).postDelayed(kotlinx.coroutines.Runnable {
+        Handler(Looper.getMainLooper()).postDelayed(Runnable {
             //add data
             val p5 = ProgrammingModel(5, "P", "Prasanta", "2020-03-02T00:00:00.000Z")
             val p4 = ProgrammingModel(4, "P", "Prasenjit", "2019-07-20T20:00:00.000Z")
