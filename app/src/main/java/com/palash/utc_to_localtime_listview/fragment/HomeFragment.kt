@@ -1,6 +1,8 @@
 package com.palash.utc_to_localtime_listview.fragment
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -44,6 +46,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Handler(Looper.getMainLooper()).postDelayed(kotlinx.coroutines.Runnable {
+            //add data
+            val p5 = ProgrammingModel(5, "P", "Prasanta", "2020-03-02T00:00:00.000Z")
+            val p4 = ProgrammingModel(4, "P", "Prasenjit", "2019-07-20T20:00:00.000Z")
+            val p3 = ProgrammingModel(3, "A", "Angshu", "2022-10-25T00:10:00.000Z")
+            adapter.submitList(listOf(p5, p4, p3))
+        },5000)
     }
 
     override fun onDestroyView() {
